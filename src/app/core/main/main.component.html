@@ -1,0 +1,32 @@
+<app-banner></app-banner>
+<app-cusines [cucine]="cucine"></app-cusines>
+
+<div class="container">
+<mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let item of ristoranti">
+        <mat-card class="example-card" >
+        <mat-card-header>
+         
+          <mat-card-title>{{item.restaurantName}}</mat-card-title>
+          <img class="images" mat-card-image src="../../../assets/img/1350x900_pasta_carbonare.jpg" alt="carbo">
+        </mat-card-header>
+      
+        <mat-card-content>
+          <p>
+            {{item.cuisine}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>{{item.priceRange}}</button>
+          <button mat-button>{{item.geolocation.city}}</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+    
+
+  </mat-grid-list>
+  <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10]"></p-paginator>
+  </div>
+
+
+
+ 
