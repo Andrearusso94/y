@@ -8,12 +8,16 @@ import{Observable, of} from 'rxjs';
 })
 export class MainComponent implements OnInit {
 
-  
+  // variabili d'appoggio per array api
   cucine: any;
   ristoranti:any;
+
+  //constructor del servizio
 constructor(private service: ServiceService){
   
 }
+
+//funzione che ritorna l'oggetto delle cucine e  dei ristoranti
   ngOnInit(): void {
    this.service.getList().subscribe((response: any)=>{
     this.cucine = response;
@@ -28,6 +32,8 @@ constructor(private service: ServiceService){
    })
   }
 
+  /* pagination da finire
+
   first: number = 0;
 
     rows: number = 10;
@@ -36,5 +42,5 @@ constructor(private service: ServiceService){
         this.first = event.first;
         this.rows = event.rows;
     }
-
+*/
 }

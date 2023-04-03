@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cusines.component.scss']
 })
 export class CusinesComponent {
+  //mando in input i dati dell'array delle cucine
 @Input() cucine = [];
 }
